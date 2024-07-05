@@ -1,1 +1,1 @@
-export const CLOUD_URL = location.protocol + '//' + location.host;
+export const CLOUD_URL = 'https://github-pavel.github.io/sportres-test';
