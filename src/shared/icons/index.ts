@@ -4,3 +4,4 @@ export { default as Play } from './play.svg';
 export { default as CheckBadge } from './check-badge.svg';
 export { default as Certificate } from './certificate.svg';
 export { default as VideoRecorder } from './video-recorder.svg';
+export { default as Grid } from './grid.svg';
