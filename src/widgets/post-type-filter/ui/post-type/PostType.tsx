@@ -5,15 +5,11 @@ import { color } from '@/shared/utils';
 import { useAtom } from 'jotai';
 import * as icons from '@/shared/icons';
 import { useTranslation } from 'react-i18next';
-import { Theme, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 type ButtonProps = {
-  theme?: Theme;
   isActive: boolean;
 };
-
-const getColor = ({ theme, isActive }: ButtonProps) =>
-  isActive ? color(700)(theme) : color(400)(theme);
 
 const Button = styled.button<ButtonProps>`
   border-radius: 10px;
@@ -24,12 +20,17 @@ const Button = styled.button<ButtonProps>`
   gap: 12px;
   background: ${({ theme, isActive }) =>
     isActive ? color(200)(theme) : 'transparent'};
-  color: ${getColor};
+  color: ${({ theme, isActive }) =>
+    isActive ? color(700)(theme) : color(400)(theme)};
   transition: 0.2s ease-in-out;
+
+  * {
+    color: currentColor;
+  }
 
   svg * {
     transition: stroke 0.2s ease-in-out;
-    stroke: ${getColor};
+    stroke: currentColor;
   }
 
   &:hover:not([disabled]) {
