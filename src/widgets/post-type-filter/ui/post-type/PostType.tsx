@@ -29,7 +29,6 @@ const Button = styled.button<ButtonProps>`
   }
 
   svg * {
-    transition: stroke 0.2s ease-in-out;
     stroke: currentColor;
   }
 
